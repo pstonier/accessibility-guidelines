@@ -1,9 +1,9 @@
-#Accessibility Guidelines
+# Accessibility Guidelines
 
 
-##ARIA Landmark Roles
+## ARIA Landmark Roles
 
->ARIA Landmark Roles help assistive devices navigate your site. Important roles to be aware of include:
+> ARIA Landmark Roles help assistive devices navigate your site. Important roles to be aware of include:
 
 > **banner** – Typically the “header” of your page that includes the name of the site
 
@@ -26,7 +26,7 @@ To add a role to an element, simply add the “role” as an attribute:
 <cite>Source: [http://a11yproject.com/posts/aria-landmark-roles/](http://a11yproject.com/posts/aria-landmark-roles/)
 </cite>
 
-###Other resources: 
+### Other resources: 
 
 [https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page)
 
@@ -35,7 +35,7 @@ To add a role to an element, simply add the “role” as an attribute:
 
 - - - 
 
-##`aria-hidden` (state)
+## `aria-hidden` (state)
 
 Tells the screen reader not to read that part.
 
@@ -51,7 +51,7 @@ Source: <cite>[http://www.w3.org/TR/wai-aria/states_and_properties#aria-hidden](
 
 - - - 
 
-##`aria-haspopup` (property)
+## `aria-haspopup` (property)
 
 Used to let the screen reader know that there is a submenu to expand.
 
@@ -69,7 +69,7 @@ While, I originally thought this would be a good idea for the modals, it appears
 
 
 
-##`aria-describedby` (property)
+## `aria-describedby` (property)
 
 Used to link to a description. In our case, to describe the content of the box before it reads the content of the `div`, because it starts with close button. We'll probably want to just move the close button to the bottom of the `div`.
 
@@ -92,7 +92,7 @@ Example:
 
 - - - 
 
-##`aria-live` (property)
+## `aria-live` (property)
 
 Update the reader if content in this `div` has changed.
 
@@ -115,32 +115,33 @@ Source: [http://juicystudio.com/article/wai-aria_live-regions_updated.php](http:
 
 > To create a live region, the developer adds the aria-live property to the element with a value of `off`, `polite`, `assertive`, or `rude`. The value, or politeness level (or alternatively the intrusiveness level), specifies what a screen reader should do when the element is updated.
 
->A value of off (`aria-live="off"`) tells the screen reader to not announce the update. If/when the screen reader user encounters the updated content, it will be read at that time. This would be used for non-important or irrelevant content updates.
-A value of **`polite`** will notify the user of the content change as soon as he/she is done with the current task. This might take the form of a beep or an audio indication of the update. The user can then choose to directly jump to the updated content. This value would be the most common for content updates, especially for things like status notification, weather or stock updates, chat messages, etc.
+> A value of off (`aria-live="off"`) tells the screen reader to not announce the update. If/when the screen reader user encounters the updated content, it will be read at that time. This would be used for non-important or irrelevant content updates.
 
->An aria-live value of **`assertive`** will result in the user being alerted to the content change immediately or as soon as possible. Assertive would be used for important updates, such as error messages
+> A value of **`polite`** will notify the user of the content change as soon as he/she is done with the current task. This might take the form of a beep or an audio indication of the update. The user can then choose to directly jump to the updated content. This value would be the most common for content updates, especially for things like status notification, weather or stock updates, chat messages, etc.
 
->You can also define which content should be read when an update occurs. Additionally, there are special ARIA roles that define certain types of highly dynamic content, such as alerts, logs, and timers. The high level of fidelity with ARIA live regions allows great flexibility both for developers and for end users.
+> An aria-live value of **`assertive`** will result in the user being alerted to the content change immediately or as soon as possible. Assertive would be used for important updates, such as error messages
+
+> You can also define which content should be read when an update occurs. Additionally, there are special ARIA roles that define certain types of highly dynamic content, such as alerts, logs, and timers. The high level of fidelity with ARIA live regions allows great flexibility both for developers and for end users.
 
 Source: [http://webaim.org/techniques/aria/](http://webaim.org/techniques/aria/)
 
 
 - - -
 
-##`aria-atomic` (property)
+## `aria-atomic` (property)
 
 Re-read everything in this div if the content is updated. Related back to `aria-live`.
 
->The `aria-atomic` property is an optional property that can have the values true or false (default). When the region is updated, the atomic property is used to indicate if assistive technologies should present all or part of the changed region to the user, and is influenced by the aria-relevant property. If the aria-atomic property is set to true, assistive technologies should present the entire region as a whole depending on the aria-relevant property; otherwise, the part of the region that changed might be announced on its own.
+> The `aria-atomic` property is an optional property that can have the values true or false (default). When the region is updated, the atomic property is used to indicate if assistive technologies should present all or part of the changed region to the user, and is influenced by the aria-relevant property. If the aria-atomic property is set to true, assistive technologies should present the entire region as a whole depending on the aria-relevant property; otherwise, the part of the region that changed might be announced on its own.
 
->Sometimes, updates make sense on their own, such as a new line arriving in a chat application. Other times, changes in the content may not make sense without the context of other parts of the region. In these cases, aria-atomic="true" should be set on the relevant container so the region is presented as a whole. In the following example, if a change is made anywhere in the div element, the whole content is announced to the user.
+> Sometimes, updates make sense on their own, such as a new line arriving in a chat application. Other times, changes in the content may not make sense without the context of other parts of the region. In these cases, aria-atomic="true" should be set on the relevant container so the region is presented as a whole. In the following example, if a change is made anywhere in the div element, the whole content is announced to the user.
 
 Source: [http://juicystudio.com/article/wai-aria_live-regions_updated.php](http://juicystudio.com/article/wai-aria_live-regions_updated.php)
 
 
 - - -
 
-##`aria-relevant` (Property)
+## `aria-relevant` (Property)
 
 
 > The `aria-relevant` property is an optional property used to indicate the type of update that should be announced within a region: see changes to document content or node visibility for technical details. The aria-relevant property accepts a space separated list of the following property values:
@@ -162,21 +163,21 @@ Source: [http://juicystudio.com/article/wai-aria_live-regions_updated.php](http:
 
 - - -
 
-##`tabindex` (property)
+## `tabindex` (property)
 
 Sets the order of the object when tabbing through the page.
 
 The couple exceptions:
 
->**`tabindex="0"`**: A value of 0 indicates that the element should be placed in the default navigation order. This allows elements that are not natively focusable (such as `<div>`, `<span>`, and `<p>`) to receive keyboard focus. Of course one should generally use links and form controls for all interactive elements, but this does allow other elements to be focusable and trigger interaction.
+> **`tabindex="0"`**: A value of 0 indicates that the element should be placed in the default navigation order. This allows elements that are not natively focusable (such as `<div>`, `<span>`, and `<p>`) to receive keyboard focus. Of course one should generally use links and form controls for all interactive elements, but this does allow other elements to be focusable and trigger interaction.
 
->**`tabindex="-1"`**: removes the element from the default navigation flow (i.e., a user cannot tab to it), but it allows it to receive programmatic focus, meaning focus can be set to it from a link or with scripting. This can be very useful for elements that should not be tabbed to, but that may need to have focus set to them. A good example is a modal dialog window - when opened, focus should be set to the dialog so a screen reader will begin reading and the keyboard will begin navigating within the dialog. Because the dialog (probably just a `<div>` element) is not focusable by default, assigning it tabindex="-1" allows focus to be set to it with scripting when it is presented.
+> **`tabindex="-1"`**: removes the element from the default navigation flow (i.e., a user cannot tab to it), but it allows it to receive programmatic focus, meaning focus can be set to it from a link or with scripting. This can be very useful for elements that should not be tabbed to, but that may need to have focus set to them. A good example is a modal dialog window - when opened, focus should be set to the dialog so a screen reader will begin reading and the keyboard will begin navigating within the dialog. Because the dialog (probably just a `<div>` element) is not focusable by default, assigning it tabindex="-1" allows focus to be set to it with scripting when it is presented.
 
 Source: [http://webaim.org/techniques/keyboard/tabindex](http://webaim.org/techniques/keyboard/tabindex)
 
 - - -
 
-##`aria-expanded` (state)
+## `aria-expanded` (state)
 
 Is this `element` expanded? True or false.
 
@@ -186,23 +187,23 @@ Additional Resources: [http://heydonworks.com/practical_aria_examples/](http://h
 
 - - -
 
-##`aria-controls` (property)
+## `aria-controls` (property)
 
 Works in tandem with `aria-expanded`. It identifies that “this button or link controls that object — based on the ID”.
 
 Also used for tabs, checkboxes, etc.
 
->Identifies the element (or elements) whose contents or presence are controlled by the current element. See related aria-owns.
+> Identifies the element (or elements) whose contents or presence are controlled by the current element. See related aria-owns.
 
->For example:
+> For example:
 
->A table of contents tree view may control the content of a neighboring document pane.
+> A table of contents tree view may control the content of a neighboring document pane.
 A group of checkboxes may control what commodity prices are tracked live in a table or graph.
 A tab controls the display of its associated tab panel.
 
 Source: [http://www.w3.org/TR/wai-aria/states_and_properties#aria-controls](http://www.w3.org/TR/wai-aria/states_and_properties#aria-controls)
 
-###An Example of Mobile Navigation Button
+### An Example of Mobile Navigation Button
 
 ```
 <button class="secondary-toggle toggled-on" aria-expanded="true" aria-controls="secondary">Menu and widgets</button>
@@ -236,7 +237,7 @@ Source: [http://www.w3.org/TR/wai-aria/states_and_properties#aria-controls](http
 
 - - -
 
-#Code Examples
+# Code Examples
 
 - [Accessible Modal Popup](http://codepen.io/scottohara/pen/lIdfv)
 - [aria-label for Read More](http://codepen.io/joe-watkins/pen/xaDbJ)
@@ -244,7 +245,7 @@ Source: [http://www.w3.org/TR/wai-aria/states_and_properties#aria-controls](http
 
 - - -
 
-##Accessibility Checklist
+## Accessibility Checklist
 
 
 
@@ -254,7 +255,7 @@ Source: [http://www.w3.org/TR/wai-aria/states_and_properties#aria-controls](http
 - - -
 
 
-##Section 508 Requirements Checklist
+## Section 508 Requirements Checklist
 
 There are 16 criteria in this subsection which cover the range of impairments listed in the Functional Performance Criteria.
 
